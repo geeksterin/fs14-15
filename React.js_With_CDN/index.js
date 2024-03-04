@@ -41,10 +41,13 @@ function Dashboard() {
   const names = ["A", "B", "C"];
   return (
     <div>
-      <Home />
-      <About />
+      <h1>Hello Dashboard</h1>
+      {names.map((element, index) => {
+        return <p key={index}>{element}</p>;
+      })}
     </div>
   );
 }
 
 ReactDOM.render(<Dashboard />, document.querySelector("#root"));
+ReactDOM.render(<About />, document.querySelector("#geek"));
