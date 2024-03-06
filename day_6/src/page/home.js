@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Home = (props) => {
-  const { name, id, num } = props;
-  return <div>{name}</div>;
-};
+  const { name, content, show, setShow } = props;
 
-export const List = () => {
+  console.log("home", show);
+
   return (
     <div>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
+      <div>
+        <h6>{name}</h6>
+        {show === "home" ? <p>{content}</p> : ""}
+        <button
+          onClick={() => {
+            setShow("home");
+          }}
+        >
+          show
+        </button>
+      </div>
     </div>
   );
 };
