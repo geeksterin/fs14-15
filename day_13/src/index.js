@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import Home from "./Home";
 import Contact from "./Contact";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Product } from "./Product";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "contact",
     element: <Contact />,
+  },
+  {
+    path: "product/:id", // dynamic route
+    element: <Product />,
   },
 ]);
 

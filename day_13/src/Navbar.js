@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { Data } from "./Data";
 
 export const Navbar = () => {
   return (
@@ -15,6 +16,13 @@ export const Navbar = () => {
           <li>
             <NavLink to="/contact">contact</NavLink>
           </li>
+          {Data.map((item, index) => {
+            return (
+              <li key={index}>
+                <NavLink to={`/product/${item.id}`}>{item.name}</NavLink>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </div>
