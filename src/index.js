@@ -13,7 +13,7 @@ const routes = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/subcategory/:subcategory",
+    path: "/subcategory/:subcategory", // :paramsName
     element: <SubCategory />,
   },
   {

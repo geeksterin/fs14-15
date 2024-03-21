@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const Category = () => {
   const [category, setCategory] = useState([]);
 
+  const params = useParams();
+  console.log("params", params);
   async function fetchCategory() {
     const result = await axios(
       "https://www.themealdb.com/api/json/v1/1/categories.php"
@@ -17,11 +19,21 @@ const Category = () => {
   }, []);
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: "10px",
+        margin: "10px",
+        border: "1px solid black",
+        borderRadius: "10px",
+      }}
+    >
       <h6>Category</h6>
       {category.map((subCategory) => {
-        console.log(subCategory);
-
         return (
           <div key={subCategory.idCategory}>
             <NavLink to={`/subcategory/${subCategory.strCategory}`}>

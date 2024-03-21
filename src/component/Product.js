@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
+import Search from "./Search";
 
 const Product = () => {
   const [product, setProduct] = useState({});
@@ -19,28 +20,32 @@ const Product = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        padding: "10px",
-        margin: "10px",
-        border: "1px solid black",
-        borderRadius: "10px",
-      }}
-    >
-      <h6>Category : {product.strCategory}</h6>
-      <div>
-        <h6>{product.strMeal}</h6>
-        <img
-          src={product.strMealThumb}
-          alt={product.strMeal}
-          style={{ width: "5rem" }}
-        />
-        <p>{product.strInstructions}</p>
+    <div>
+      <Search />
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          padding: "10px",
+          margin: "10px",
+          border: "1px solid black",
+          borderRadius: "10px",
+        }}
+      >
+        <h6>Category : {product.strCategory}</h6>
+        <div>
+          <h6>{product.strMeal}</h6>
+          <img
+            src={product.strMealThumb}
+            alt={product.strMeal}
+            style={{ width: "5rem" }}
+          />
+          <p>{product.strInstructions}</p>
+        </div>
       </div>
     </div>
   );
